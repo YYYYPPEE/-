@@ -1,0 +1,25 @@
+//
+#include<stdio.h>
+int my_strlen(char* i)
+{
+	if (i == NULL) {
+		return 0;
+	}
+	
+	int len=0;
+
+	while (*i!='\0')
+	{
+		len++;
+		i++;
+	}
+	return len;
+}
+int main()
+{
+	char arr[] = "123456";
+	int a = my_strlen(arr);
+	printf("%d", a);
+
+	return 0;
+} 
