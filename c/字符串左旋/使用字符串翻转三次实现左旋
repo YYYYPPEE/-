@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include<stdio.h>
+#include<assert.h>
+#include<string.h>
+
+reverse(char* left, char* right)
+{
+	char tmp=0;
+	assert(left && right);
+	while (left < right)
+	{
+		tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+
+}
+void left_rorate(char arr[], int k)
+{
+	int len = strlen(arr);
+	reverse(arr, arr + k - 1);
+	reverse(arr + k, arr + len - 1);
+	reverse(arr, arr + len - 1);
+
+
+}
+int main()
+{
+	char arr[] = { "abcdef" };
+	int k = 0;
+	scanf("%d", &k);
+	left_rorate(arr, k);
+	printf("%s\n", arr);
+	
+	return 0;
+}
